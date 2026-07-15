@@ -34,13 +34,12 @@ L'associazione si occupa di:
   ospitante e documenti scritti a tutela del gatto;
 - 🎟️ **Lotterie di beneficenza** con montepremi, per finanziare le cure.
 
-**Indirizzo:** Via Onofrio di Giordano 53, Cava de' Tirreni (SA)
+## ℹ️ Generali
 
-**Orari:** ogni giorno, 11:00–12:30 e 18:00–19:30
-
-**Telefono:** 340 292 9928 ·
-
-**Email:** vibrissecodine@gmail.com
+- **Indirizzo:** Via Onofrio di Giordano 53, Cava de' Tirreni (SA)
+- **Orari:** ogni giorno, 11:00–12:30 e 18:00–19:30
+- **Telefono:** 340 292 9928
+- **Email:** vibrissecodine@gmail.com
 
 
 ---
