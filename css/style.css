@@ -313,6 +313,18 @@ body{ top: 0 !important; }
 .gallery-nav button:hover{ background: var(--ink); color: var(--white); transform: translateY(-2px); }
 
 /* ============================= SOSTIENICI ============================= */
+.prize-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.5rem;
+}
+.prize-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
 .support{
   background: var(--ink); color: var(--white); border-radius: 32px;
   padding: clamp(2.4rem,5vw,4rem); position: relative; overflow:hidden;
