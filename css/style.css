@@ -322,7 +322,7 @@ body{ top: 0 !important; }
     background:#fff;
     border-radius:20px;
     padding:1rem;
-    text-align:center;
+    text-align:bottom;
 }
 .prize-card img{
     width:100%;
