@@ -10,6 +10,26 @@
       <!-- Google Translate: viene inizializzato in modo invisibile e pilotato dalla
          tendina personalizzata con le bandiere in fondo a questa pagina. -->
       <meta name="google" content="notranslate">
+      <!-- Rete di sicurezza anti-banner di Google Translate: scritta direttamente
+           qui (non solo in style.css) così è garantito che si applichi subito,
+           anche se il file css esterno fosse ancora in cache in una versione vecchia. -->
+      <style>
+        .goog-te-banner-frame,
+        .goog-te-banner-frame.skiptranslate,
+        iframe.goog-te-banner-frame,
+        .goog-te-gadget-icon,
+        .goog-tooltip,
+        .goog-tooltip:hover,
+        #goog-gt-tt,
+        .goog-te-balloon-frame{
+          display:none !important;
+          visibility:hidden !important;
+          height:0 !important;
+          opacity:0 !important;
+        }
+        body{ position:static !important; top:0 !important; margin-top:0 !important; }
+        html{ margin-top:0 !important; }
+      </style>
    </head>
    <body>
       <a class="skip-link" href="#main" style="position:absolute;left:-999px;">Vai al contenuto</a>
@@ -404,5 +424,30 @@
       <script src="js/translate.js"></script>
       <script src="js/main.js"></script>
       <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <script>
+        // Ultima rete di sicurezza: se per qualsiasi motivo il CSS non nasconde
+        // in tempo il banner di Google Translate, lo eliminiamo/nascondiamo
+        // via JavaScript non appena compare nel DOM, e riportiamo body/html
+        // alla posizione normale.
+        (function () {
+          function killBanner() {
+            document
+              .querySelectorAll(
+                ".goog-te-banner-frame, iframe.goog-te-banner-frame, .goog-te-balloon-frame"
+              )
+              .forEach(function (el) {
+                el.style.setProperty("display", "none", "important");
+                el.style.setProperty("visibility", "hidden", "important");
+                el.style.setProperty("height", "0", "important");
+              });
+            document.body.style.setProperty("top", "0px", "important");
+            document.body.style.setProperty("position", "static", "important");
+            document.documentElement.style.setProperty("margin-top", "0px", "important");
+          }
+          killBanner();
+          var observer = new MutationObserver(killBanner);
+          observer.observe(document.documentElement, { childList: true, subtree: true });
+        })();
+      </script>
    </body>
 </html>
