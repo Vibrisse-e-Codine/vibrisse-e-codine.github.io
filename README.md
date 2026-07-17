@@ -100,10 +100,10 @@ immagini aggiornate dei nostri amici a quattro zampe!😻
 │   ├── languages.js         # elenco lingue disponibili (codice, nome, bandiera)
 │   ├── translate.js         # ponte con il widget Google Translate
 │   └── main.js               # interazioni: menu, slider, scroll reveal, selettore lingua
-├── assets/
-│   ├── logo.png              # logo dell'associazione (header e footer)
-│   ├── watermark.png         # firma "manu1394©" (il creatore) nel footer
-│   └── gallery/               # foto dei gatti mostrate nello slider
+├── immagini/
+│   ├── galleria              # immagini principali del sito
+│   ├── loghi        			# loghi dell'associazione
+│   └── montepremi               # montepremi delle Lotterie
 └── README.md
 ```
 
