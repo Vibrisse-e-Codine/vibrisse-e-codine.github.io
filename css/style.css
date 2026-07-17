@@ -338,24 +338,6 @@ body{ top: 0 !important; }
 }
 .copy-btn:hover{ background: var(--orange); }
 
-.prize-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:1.5rem;
-}
-.prize-card{
-    background:#fff;
-    border-radius:20px;
-    padding:1rem;
-    text-align:center;
-}
-.prize-card img{
-    width:80%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
 /* ============================= CONTATTI ============================= */
 .contact-grid{ display:grid; grid-template-columns: .95fr 1.05fr; gap: clamp(2rem,5vw,4rem); }
 .contact-list{ display:flex; flex-direction:column; gap: 1.3rem; margin-top: 1.4rem; }
