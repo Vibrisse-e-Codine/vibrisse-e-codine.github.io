@@ -201,8 +201,38 @@ button{ font-family: inherit; cursor:pointer; }
 .lang-list button.active{ background: var(--orange); color: var(--white); }
 .lang-empty{ font-size: .82rem; color: var(--ink-soft); padding: .5rem .6rem; }
 #google_translate_element{ position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; }
-.goog-te-banner-frame{ display:none !important; }
-body{ top: 0 !important; }
+
+/* ---------- blocco completo del widget Google Translate ----------
+   Google inserisce nel <body> un iframe fisso in alto (.goog-te-banner-frame)
+   e sposta il body verso il basso con uno stile inline (position:relative; top:40px)
+   per fargli spazio. Se non annulliamo ANCHE "position", il solo "top:0" non basta
+   sempre e il banner resta visibile sopra il nostro header. Nascondiamo quindi ogni
+   elemento che Google può iniettare, non solo il banner principale. */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-gadget-icon,
+.goog-tooltip,
+.goog-tooltip:hover,
+#goog-gt-tt,
+.goog-te-balloon-frame{
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+  opacity:0 !important;
+}
+.goog-text-highlight{
+  background:none !important;
+  box-shadow:none !important;
+}
+body{
+  position:static !important;
+  top:0 !important;
+  margin-top:0 !important;
+}
+html{
+  margin-top:0 !important;
+}
 
 /* ============================= HERO ============================= */
 .hero{
