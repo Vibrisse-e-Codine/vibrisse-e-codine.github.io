@@ -125,19 +125,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------------- slider della galleria ---------------- */
-  const track = document.querySelector(".gallery-track");
-  const prevBtn = document.querySelector('[data-gallery="prev"]');
-  const nextBtn = document.querySelector('[data-gallery="next"]');
-  if (track && prevBtn && nextBtn) {
-    const scrollByCard = (dir) => {
-      const card = track.querySelector(".gallery-slide");
-      const gap = 20;
-      const distance = card ? card.getBoundingClientRect().width + gap : 300;
-      track.scrollBy({ left: dir * distance, behavior: "smooth" });
-    };
-    prevBtn.addEventListener("click", () => scrollByCard(-1));
-    nextBtn.addEventListener("click", () => scrollByCard(1));
-  }
+  document.querySelectorAll(".gallery-wrap").forEach((gallery) => {
+  const track = gallery.querySelector(".gallery-track");
+  const prevBtn = gallery.querySelector('[data-gallery="prev"]');
+  const nextBtn = gallery.querySelector('[data-gallery="next"]');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const scrollByCard = (dir) => {
+    const card = track.querySelector(".gallery-slide");
+    const gap = 20;
+    const distance = card
+      ? card.getBoundingClientRect().width + gap
+      : 300;
+
+    track.scrollBy({
+      left: dir * distance,
+      behavior: "smooth",
+    });
+  };
+
+  prevBtn.addEventListener("click", () => scrollByCard(-1));
+  nextBtn.addEventListener("click", () => scrollByCard(1));
+});
 
   /* ---------------- copia IBAN / PayPal ---------------- */
   document.querySelectorAll(".copy-btn").forEach((btn) => {
