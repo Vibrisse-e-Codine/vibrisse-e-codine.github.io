@@ -1,14 +1,5 @@
 /**
- * Ponte tra il sito e Google Translate. Il sito resta in italiano finché
- * l'utente non sceglie un'altra lingua dalla tendina con le bandiere.
- *
- * Il vecchio metodo (pilotare via JavaScript la tendina nascosta creata da
- * Google) si è rivelato inaffidabile: molti browser non registravano il
- * cambiamento. Usiamo quindi il meccanismo ufficiale e documentato del
- * widget "Google Website Translator": un cookie chiamato "googtrans" nel
- * formato "/lingua_originale/lingua_scelta". Quando la pagina si ricarica,
- * lo script di Google legge da solo questo cookie e traduce automaticamente
- * tutto il contenuto — senza bisogno di simulare click o eventi.
+ * Ponte tra il sito e Google Translate.
  */
 
 const SOURCE_LANG = "it";
@@ -55,14 +46,6 @@ function resetTranslation() {
   window.location.reload();
 }
 
-/**
- * Quando la traduzione è attiva, Google scrive un inline style tipo
- * `<body style="top: 40px !important">` per lasciare spazio al suo banner.
- * Uno stile inline batte QUALSIASI regola nel nostro foglio CSS, anche con
- * !important, quindi l'unico modo affidabile di eliminarlo è intervenire
- * via JavaScript ogni volta che Google prova a riapplicarlo. Questo è ciò
- * che "spingeva giù" l'header e rompeva la action bar.
- */
 function neutralizeGoogleBannerOffset() {
   if (!document.body) return;
   const fixBodyTop = () => {
