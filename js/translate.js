@@ -54,3 +54,26 @@ function resetTranslation() {
   writeGoogTransCookie("", expired);
   window.location.reload();
 }
+
+/**
+ * Quando la traduzione è attiva, Google scrive un inline style tipo
+ * `<body style="top: 40px !important">` per lasciare spazio al suo banner.
+ * Uno stile inline batte QUALSIASI regola nel nostro foglio CSS, anche con
+ * !important, quindi l'unico modo affidabile di eliminarlo è intervenire
+ * via JavaScript ogni volta che Google prova a riapplicarlo. Questo è ciò
+ * che "spingeva giù" l'header e rompeva la action bar.
+ */
+function neutralizeGoogleBannerOffset() {
+  if (!document.body) return;
+  const fixBodyTop = () => {
+    if (document.body.style.top && document.body.style.top !== "0px") {
+      document.body.style.top = "0px";
+    }
+  };
+  fixBodyTop();
+  new MutationObserver(fixBodyTop).observe(document.body, {
+    attributes: true,
+    attributeFilter: ["style"]
+  });
+}
+neutralizeGoogleBannerOffset();
