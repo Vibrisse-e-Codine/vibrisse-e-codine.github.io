@@ -124,8 +124,6 @@ button{ font-family: inherit; cursor:pointer; }
 .site-header{
   position: sticky; top: 0; z-index: 50;
   border-bottom: 1px solid var(--paper-line);
-  /* niente background/backdrop-filter qui: su questo elemento romperebbero
-     il posizionamento "fixed" del menu mobile (vedi .site-header::before) */
 }
 .site-header::before{
   content:"";
@@ -202,12 +200,6 @@ button{ font-family: inherit; cursor:pointer; }
 .lang-empty{ font-size: .82rem; color: var(--ink-soft); padding: .5rem .6rem; }
 #google_translate_element{ position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; }
 
-/* ---- Google Translate: banner, tooltip ed evidenziazione gialla nascosti ----
-   Il widget di Google, quando si attiva, inserisce lui stesso un <style> nella
-   <head> con "body{ top:40px !important }" DOPO questo foglio di stile: a parità
-   di specificità vince chi arriva dopo, quindi il nostro "body{top:0!important}"
-   veniva ignorato. Usando "html body" alziamo la specificità e vinciamo sempre,
-   qualunque sia l'ordine di caricamento. */
 html body{ top: 0 !important; position: static !important; margin-top: 0 !important; }
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
