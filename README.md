@@ -93,17 +93,17 @@ immagini aggiornate dei nostri amici a quattro zampe!😻
 
 ```
 .
-├── index.html              # pagina principale del sito
+├── index.html                # pagina principale del sito
 ├── css/
-│   └── style.css           # design system, layout, animazioni
+│   └── style.css             # design system, layout, animazioni
 ├── js/
-│   ├── languages.js         # elenco lingue disponibili (codice, nome, bandiera)
-│   ├── translate.js         # ponte con il widget Google Translate
+│   ├── languages.js          # elenco lingue disponibili (codice, nome, bandiera)
+│   ├── translate.js          # ponte con il widget Google Translate
 │   └── main.js               # interazioni: menu, slider, scroll reveal, selettore lingua
 ├── immagini/
 │   ├── galleria              # immagini principali del sito
-│   ├── loghi        			# loghi dell'associazione
-│   └── montepremi               # montepremi delle Lotterie
+│   ├── loghi        	      # loghi dell'associazione
+│   └── montepremi            # montepremi delle Lotterie
 └── README.md
 ```
 
