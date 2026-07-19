@@ -334,7 +334,7 @@ body > .skiptranslate:not(#google_translate_element){ display:none !important; h
     height:220px;
     object-fit:cover;
     border-radius:12px;
-	margin-bottom:6px;
+	margin-bottom:2px;
 }
 
 .support{
