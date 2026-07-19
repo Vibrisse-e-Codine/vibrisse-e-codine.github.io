@@ -328,6 +328,14 @@ body > .skiptranslate:not(#google_translate_element){ display:none !important; h
     border-radius:20px;
     padding:.5rem;
     text-align:center;
+    display:flex;
+    flex-direction:column;
+}
+.prize-card b{
+    margin-top:4px;
+}
+.prize-card p{
+    margin:4px 0 0;
 }
 .prize-card img{
     width:100%;
