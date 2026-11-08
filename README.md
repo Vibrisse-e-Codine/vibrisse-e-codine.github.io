@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" width="120" alt="Logo ODV Vibrisse & Codine">
+<img src="immagini/loghi/marchio.png" width="120" alt="Logo ODV Vibrisse & Codine">
 
 # 🐾 ODV Vibrisse & Codine
 ### *Ogni baffo merita cure, ogni coda merita casa.*
